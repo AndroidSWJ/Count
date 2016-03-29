@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>R4班离校情况统计</title>
+</head>
+<body>
+
+
+    <table border="1" cellspacing="0" cellpadding="5">
+        <tr>
+        <th colspan="5">数学与信息学院 软件学院离校情况统计表</th>
+        </tr>
+        <tr>
+            <th>学号</th>
+            <th>离校原因</th>
+            <th>离校去向</th>
+            <th>离校时间</th>
+            <th>备注</th>
+        </tr>
+        <?php
+
+        require_once('./DBConnect.php');
+        $conn = DBConnect::get_instance()->connect();
+        $sql = "select student_num,reason,place,gone_time,other form massage";
+        $result = mysqli_query($conn, $sql);
+        while ($row = mysqli_fetch_array($result)) {
+        echo "<tr>
+        <td>$row[student_num]</td>
+        <td>$row[reason]</td>
+        <td>$row[place]</td>
+        <td>$row[gone_time]</td>
+        <td>$row[other]</td>
+        </tr>
+        ";
+        }
+        ?>
+    </table>
+</body>
+</html>

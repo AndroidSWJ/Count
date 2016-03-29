@@ -1,0 +1,42 @@
+.float_left{
+    float: left;
+    padding: 0 50px;
+}
+
+.float_right{
+    float: right;
+}
+
+textarea{
+    width:400px;
+    height:200px;
+}
+
+tr{
+    width:400px;
+}
+
+.col-1{
+    width:70px;
+}
+
+.col-2{
+    width:330px;
+}
+
+input[type="text"]{
+    width:330px;
+}
+
+input[type="submit"]{
+    width:70px;
+}
+
+.float_clear:after{
+    clear: both;
+    content: '\0020';
+    display: block;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
